@@ -1,0 +1,113 @@
+/* Write your CSS here */
+.container {
+  margin: 1rem;
+  padding: 1rem;
+  font-family: 'roboto';
+}
+.user-card {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
+  padding: 1rem;
+  background-size: cover;
+  width: 100%;
+  margin-bottom: 10px;
+}
+span {
+  color: #0b69ff;
+}
+.money-section {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  padding: 10px;
+}
+.money-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 8px;
+}
+.money-card1 {
+  border-color: #84cc16;
+  background-color: #ecfccb;
+}
+.money-card2 {
+  border-color: #06b6d4;
+  background-color: #cffafe;
+}
+.money-card3 {
+  border-color: #7c3aed;
+  background-color: #ede9fe;
+}
+
+.money-img {
+  width: 80px;
+}
+
+.transc-history {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+.t-sec {
+  width: 100%;
+  border: 1px solid #7e858e;
+  border-radius: 10px;
+  padding: 15px;
+  padding-left: 35px;
+}
+.transaction-section {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 50%;
+}
+select {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.transaction-btn {
+  background-color: #0b69ff;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 10px;
+  border-style: none;
+  width: 25%;
+}
+.h-sec {
+  border: 1px solid #7e858e;
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+tr {
+  border: 1px solid #7e858e;
+  display: flex;
+}
+tr > p {
+  margin-right: 80px;
+}
+th,
+td {
+  width: 100px;
+  text-align: left;
+  padding: 8px;
+}
+.amount {
+  font-weight: 600;
+}

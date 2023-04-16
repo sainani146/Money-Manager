@@ -1,0 +1,24 @@
+/* Write your CSS here */
+.delete {
+  width: 20px;
+}
+button {
+  border-style: none;
+  background-color: transparent;
+}
+li {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+tr {
+  border: 1px solid #7e858e;
+}
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  margin-right: 1rem;
+}
