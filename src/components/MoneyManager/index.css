@@ -91,23 +91,44 @@ select {
 ul {
   list-style: none;
 }
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-tr {
-  border: 1px solid #7e858e;
+.box {
+  border: 1px solid rgb(34, 28, 28);
+  padding: 10px;
   display: flex;
 }
-tr > p {
-  margin-right: 80px;
-}
-th,
-td {
+.box > p {
   width: 100px;
-  text-align: left;
-  padding: 8px;
 }
+
 .amount {
   font-weight: 600;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    margin: 5px;
+    padding: 10px;
+  }
+  .money-section {
+    grid-template-columns: auto;
+  }
+
+  .transc-history {
+    grid-template-columns: auto;
+    font-size: small;
+  }
+
+  .box > p {
+    width: 100px;
+  }
+
+  .container {
+    font-size: small;
+  }
+
+  .h-sec {
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

@@ -9,16 +9,10 @@ button {
 li {
   list-style: none;
 }
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-tr {
-  border: 1px solid #7e858e;
-}
-th,
-td {
-  text-align: left;
-  padding: 8px;
-  margin-right: 1rem;
-}
+/*
+.box {
+  border: 1px solid rgb(34, 28, 28);
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}*/

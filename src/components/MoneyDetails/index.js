@@ -10,21 +10,17 @@ const Moneydetails = props => {
   }
 
   return (
-    <li>
-      <tr>
-        <td>{title}</td>
-        <td>{amount}</td>
-        <td>{active}</td>
-        <td>
-          <button onClick={onDelete} type="button" data-testid="delete">
-            <img
-              className="delete"
-              src="https://assets.ccbp.in/frontend/react-js/money-manager/delete.png"
-              alt="delete"
-            />
-          </button>
-        </td>
-      </tr>
+    <li className="box">
+      <p>{title}</p>
+      <p>{amount}</p>
+      <p>{active}</p>
+      <button onClick={onDelete} type="button" data-testid="delete">
+        <img
+          className="delete"
+          src="https://assets.ccbp.in/frontend/react-js/money-manager/delete.png"
+          alt="delete"
+        />
+      </button>
     </li>
   )
 }

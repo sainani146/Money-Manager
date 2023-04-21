@@ -6,7 +6,7 @@ const TransactionItem = props => {
   const {optionId, displayText} = item
 
   return (
-    <option value={optionId} key={optionId}>
+    <option key={optionId} value={optionId}>
       {displayText}
     </option>
   )

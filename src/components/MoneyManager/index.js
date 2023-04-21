@@ -23,7 +23,7 @@ export default class MoneyManager extends Component {
     transactions: [],
     title: '',
     amount: '',
-    active: transactionTypeOptions[0].displayText,
+    active: transactionTypeOptions[0].optionId,
   }
 
   onTitle = event => {
@@ -53,18 +53,18 @@ export default class MoneyManager extends Component {
       transactions: [...prevState.transactions, newItem],
       title: '',
       amount: '',
-      active: transactionTypeOptions[0].displayText,
+      active: transactionTypeOptions[0].optionId,
     }))
 
     let inc = income
     let exp = expenses
 
-    if (active.toLowerCase() === 'income') {
+    if (active === 'INCOME' && parseInt(amount) > 0) {
       inc += parseInt(amount)
       this.setState({income: inc})
     }
 
-    if (active.toLowerCase() === 'expenses') {
+    if (active === 'EXPENSES' && parseInt(amount) > 0) {
       exp += parseInt(amount)
       this.setState({expenses: exp})
     }
@@ -78,12 +78,12 @@ export default class MoneyManager extends Component {
     let inc = income
     let exp = expenses
 
-    if (active.toLowerCase() === 'income') {
+    if (active === 'INCOME') {
       inc -= parseInt(amount)
       this.setState({income: inc})
     }
 
-    if (active.toLowerCase() === 'expenses') {
+    if (active === 'EXPENSES') {
       exp -= parseInt(amount)
       this.setState({expenses: exp})
     }
@@ -144,6 +144,7 @@ export default class MoneyManager extends Component {
             </div>
           </div>
         </div>
+
         <div className="transc-history">
           <div className="t-sec">
             <h1>Add Transaction</h1>
@@ -168,7 +169,7 @@ export default class MoneyManager extends Component {
               <label htmlFor="type">TYPE</label>
               <select id="type" onChange={this.onType} value={active}>
                 {transactionTypeOptions.map(each => (
-                  <TransactionItem key={each.id} item={each} />
+                  <TransactionItem key={each.optionId} item={each} />
                 ))}
               </select>
               <button type="submit" className="transaction-btn">
@@ -176,24 +177,23 @@ export default class MoneyManager extends Component {
               </button>
             </form>
           </div>
+
           <div className="h-sec">
             <h1>History</h1>
             <div className="h-items">
               <ul>
-                <table>
-                  <tr>
-                    <p>Title</p>
-                    <p>Amount</p>
-                    <p>Type</p>
-                  </tr>
-                  {transactions.map(eachitem => (
-                    <Moneydetails
-                      key={eachitem.id}
-                      item={eachitem}
-                      deleteMoney={this.deleteMoney}
-                    />
-                  ))}
-                </table>
+                <div className="box">
+                  <p>Title</p>
+                  <p>Amount</p>
+                  <p>Type</p>
+                </div>
+                {transactions.map(each => (
+                  <Moneydetails
+                    key={each.id}
+                    item={each}
+                    deleteMoney={this.deleteMoney}
+                  />
+                ))}
               </ul>
             </div>
           </div>
