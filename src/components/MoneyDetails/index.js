@@ -1,28 +1,51 @@
-// Write your code here
 import './index.css'
 
-const Moneydetails = props => {
-  const {item, deleteMoney} = props
-  const {title, amount, active, id} = item
-
-  const onDelete = () => {
-    deleteMoney(id, active, amount)
-  }
+const MoneyDetails = props => {
+  const {balanceAmount, incomeAmount, expensesAmount} = props
 
   return (
-    <li className="box">
-      <p>{title}</p>
-      <p>{amount}</p>
-      <p>{active}</p>
-      <button onClick={onDelete} type="button" data-testid="delete">
+    <div className="money-details-container">
+      <div className="balance-container">
         <img
-          className="delete"
-          src="https://assets.ccbp.in/frontend/react-js/money-manager/delete.png"
-          alt="delete"
+          src="https://assets.ccbp.in/frontend/react-js/money-manager/balance-image.png"
+          alt="balance"
+          className="details-img"
         />
-      </button>
-    </li>
+        <div>
+          <p className="details-text">Your Balance</p>
+          <p className="details-money" data-testid="balanceAmount">
+            Rs {balanceAmount}
+          </p>
+        </div>
+      </div>
+      <div className="income-container">
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/money-manager/income-image.png"
+          alt="income"
+          className="details-img"
+        />
+        <div>
+          <p className="details-text">Your Income</p>
+          <p className="details-money" data-testid="incomeAmount">
+            Rs {incomeAmount}
+          </p>
+        </div>
+      </div>
+      <div className="expenses-container">
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/money-manager/expenses-image.png"
+          alt="expenses"
+          className="details-img"
+        />
+        <div>
+          <p className="details-text">Your Expenses</p>
+          <p className="details-money" data-testid="expensesAmount">
+            Rs {expensesAmount}
+          </p>
+        </div>
+      </div>
+    </div>
   )
 }
 
-export default Moneydetails
+export default MoneyDetails
